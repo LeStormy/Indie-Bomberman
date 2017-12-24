@@ -1,0 +1,266 @@
+/**
+ * @Author: raph
+ * @Date:   2017-06-18T12:42:33+02:00
+ * @Last modified by:   raph
+ * @Last modified time: 2017-06-18T22:32:12+02:00
+ */
+
+#include "FileChecker.hpp"
+
+FileChecker::FileChecker() : Files({
+
+/* AUDIO */
+
+	AUDIO_PATH("Bomb.ogg"),
+	AUDIO_PATH("BombIce.ogg"),
+	AUDIO_PATH("BombLiquid.ogg"),
+	AUDIO_PATH("Button.ogg"),
+	AUDIO_PATH("ButtonPress.ogg"),
+	AUDIO_PATH("EndGameMusic.ogg"),
+	AUDIO_PATH("EndJingle.ogg"),
+	AUDIO_PATH("InGameMusic.ogg"),
+	AUDIO_PATH("Jump.ogg"),
+	AUDIO_PATH("LoadMusic.ogg"),
+	AUDIO_PATH("MenuMusic.ogg"),
+	AUDIO_PATH("MenuMusic.ogg.reapeaks"),
+	AUDIO_PATH("PowerUp.ogg"),
+	AUDIO_PATH("SplashJingle.ogg"),
+	AUDIO_PATH("SplashMusic.ogg"),
+	AUDIO_PATH("StartJingle.ogg"),
+
+/* IMAGES */
+
+	IMG_PATH("skydome_blue.png"),
+	IMG_PATH("1.png"),
+	IMG_PATH("2.png"),
+	IMG_PATH("3.png"),
+	IMG_PATH("ActionIcon.png"),
+	IMG_PATH("ActionIcon.xcf"),
+	IMG_PATH("ApplyButton.png"),
+	IMG_PATH("ApplyButtonPressed.png"),
+	IMG_PATH("BackButton.png"),
+	IMG_PATH("BackButtonPressed.png"),
+	IMG_PATH("Biome0.png"),
+	IMG_PATH("Biome1.png"),
+	IMG_PATH("Biome2.png"),
+	IMG_PATH("Biome3.png"),
+	IMG_PATH("Biome4.png"),
+	IMG_PATH("Bombs.png"),
+	IMG_PATH("BrightFire.png"),
+	IMG_PATH("cristoT1.png"),
+	IMG_PATH("cube.png"),
+	IMG_PATH("Custom0.png"),
+	IMG_PATH("Custom1.png"),
+	IMG_PATH("Custom2.png"),
+	IMG_PATH("Custom3.png"),
+	IMG_PATH("Custom4.png"),
+	IMG_PATH("CustoMap.png"),
+	IMG_PATH("CustoMapPressed.png"),
+	IMG_PATH("CustomMapPreview.png"),
+	IMG_PATH("DarkFilter.png"),
+	IMG_PATH("DarkFilterPopUp.png"),
+	IMG_PATH("DarkFilterPopUp.xcf"),
+	IMG_PATH("DefaultButton.png"),
+	IMG_PATH("DefaultButtonPressed.png"),
+	IMG_PATH("DownIcon.png"),
+	IMG_PATH("Draw.png"),
+	IMG_PATH("ExitButton.png"),
+	IMG_PATH("ExitButtonPressed.png"),
+	IMG_PATH("GameBg.jpg"),
+	IMG_PATH("GameMaps.png"),
+	IMG_PATH("GameMapsPressed.png"),
+	IMG_PATH("Go.png"),
+	IMG_PATH("GrassBottomEntity.png"),
+	IMG_PATH("hudNb1.png"),
+	IMG_PATH("hudNb2.png"),
+	IMG_PATH("hudNb3.png"),
+	IMG_PATH("hudNb4.png"),
+	IMG_PATH("hudNb5.png"),
+	IMG_PATH("hudNb6.png"),
+	IMG_PATH("hudNb7.png"),
+	IMG_PATH("hudNb8.png"),
+	IMG_PATH("hudNb9.png"),
+	IMG_PATH("HudP1.png"),
+	IMG_PATH("HudP2.png"),
+	IMG_PATH("HudP3.png"),
+	IMG_PATH("HudP4.png"),
+	IMG_PATH("HudTimer.png"),
+	IMG_PATH("HumanButton.png"),
+	IMG_PATH("HumanButtonPressed.png"),
+	IMG_PATH("HumanButton.xcf"),
+	IMG_PATH("IAButton.png"),
+	IMG_PATH("IAButtonPressed.png"),
+	IMG_PATH("IAEZButtonPressed.png"),
+	IMG_PATH("IAHARDButtonPressed.png"),
+	IMG_PATH("IAMEDButtonPressed.png"),
+	IMG_PATH("IceBonus.png"),
+	IMG_PATH("Invincible.png"),
+	IMG_PATH("KeyBar.png"),
+	IMG_PATH("KeyBarPressed.png"),
+	IMG_PATH("KickBonus.png"),
+	IMG_PATH("LeftArrow.png"),
+	IMG_PATH("LeftArrowPressed.png"),
+	IMG_PATH("LeftIcon.png"),
+	IMG_PATH("LoadBackground.png"),
+	IMG_PATH("LoadGameButton.png"),
+	IMG_PATH("LoadGameButtonPressed.png"),
+	IMG_PATH("LoadGameButtonPressed.xcf"),
+	IMG_PATH("MainMenuBackground.png"),
+	IMG_PATH("Mesh"),
+	IMG_PATH("MinusButton.png"),
+	IMG_PATH("MinusButtonPressed.png"),
+	IMG_PATH("MinusButtonPressed.xcf"),
+	IMG_PATH("MuteButton.png"),
+	IMG_PATH("NewBackground.png"),
+	IMG_PATH("NewGameButton.png"),
+	IMG_PATH("NewGameButtonPressed.png"),
+	IMG_PATH("NewLoadBackground.png"),
+	IMG_PATH("OilBonus.png"),
+	IMG_PATH("partic.png"),
+	IMG_PATH("PlayButton.png"),
+	IMG_PATH("PlayButtonPressed.png"),
+	IMG_PATH("PlayButton.xcf"),
+	IMG_PATH("Player1.png"),
+	IMG_PATH("Player2.png"),
+	IMG_PATH("Player3.png"),
+	IMG_PATH("Player4.png"),
+	IMG_PATH("Player.png"),
+	IMG_PATH("PlusButton.png"),
+	IMG_PATH("PlusButtonPressed.png"),
+	IMG_PATH("PowerLess.png"),
+	IMG_PATH("PowerPlus.png"),
+	IMG_PATH("Power.png"),
+	IMG_PATH("RerollButton.png"),
+	IMG_PATH("RerollButtonPressed.png"),
+	IMG_PATH("RightArrow.png"),
+	IMG_PATH("RightArrowPressed.png"),
+	IMG_PATH("RightArrow.xcf"),
+	IMG_PATH("RightIcon.png"),
+	IMG_PATH("ScoreBackground.png"),
+	IMG_PATH("ScoreButton.png"),
+	IMG_PATH("ScoreButtonPressed.png"),
+	IMG_PATH("SettingsBackground.png"),
+	IMG_PATH("SettingsButton.png"),
+	IMG_PATH("SettingsButtonPressed.png"),
+	IMG_PATH("slab.png"),
+	IMG_PATH("smoke.bmp"),
+	IMG_PATH("SpeedLess.png"),
+	IMG_PATH("SpeedPlus.png"),
+	IMG_PATH("spike.jpg"),
+	IMG_PATH("SplashButton.png"),
+	IMG_PATH("SplashButtonPressed.png"),
+	IMG_PATH("StartButton.png"),
+	IMG_PATH("StartButtonPressed.png"),
+	IMG_PATH("StoneBottomEntity.png"),
+	IMG_PATH("TextButton.png"),
+	IMG_PATH("TextButtonPressed.png"),
+	IMG_PATH("TextButtonPressed.xcf"),
+	IMG_PATH("tmpBg.png"),
+	IMG_PATH("UnMuteButton.png"),
+	IMG_PATH("UnusedButton.png"),
+	IMG_PATH("UnusedButtonPressed.png"),
+	IMG_PATH("UpIcon.png"),
+	IMG_PATH("VolumeBar.png"),
+	IMG_PATH("WarningScreen.png"),
+	IMG_PATH("Winner1.png"),
+	IMG_PATH("Winner2.png"),
+	IMG_PATH("Winner3.png"),
+	IMG_PATH("Winner4.png"),
+
+	/* MESHES */
+
+	MESH_PATH("bomb.3ds"),
+	MESH_PATH("CountrySide/Breakable.TGA"),
+	MESH_PATH("CountrySide/Exterior.TGA"),
+	MESH_PATH("CountrySide/GroundGrass.3ds"),
+	MESH_PATH("CountrySide/Ground.png"),
+	MESH_PATH("CountrySide/OakWood.TGA"),
+	MESH_PATH("CountrySide/Stories.TGA"),
+	MESH_PATH("CountrySide/TileCountryBreakable.3ds"),
+	MESH_PATH("CountrySide/TileCountryBreakableStraw.3ds"),
+	MESH_PATH("CountrySide/TileCountryBrick.3ds"),
+	MESH_PATH("CountrySide/UnbreakableCountry.3ds"),
+	MESH_PATH("CountrySide/UnbreakableCountry.b3d"),
+	MESH_PATH("Desert/Breakable.3ds"),
+	MESH_PATH("Desert/Breakable.TGA"),
+	MESH_PATH("Desert/Exterior.3ds"),
+	MESH_PATH("Desert/Exterior.TGA"),
+	MESH_PATH("Desert/Ground.3ds"),
+	MESH_PATH("Desert/Ground.TGA"),
+	MESH_PATH("Desert/Stories.3ds"),
+	MESH_PATH("Desert/Stories.TGA"),
+	MESH_PATH("Desert/Unbreakable.3ds"),
+	MESH_PATH("Desert/Unreakable.TGA"),
+	MESH_PATH("FallBlock.b3d"),
+	MESH_PATH("Ice.3ds"),
+	MESH_PATH("Icelands/Breakable.3ds"),
+	MESH_PATH("Icelands/Breakable.TGA"),
+	MESH_PATH("Icelands/Exterior.3ds"),
+	MESH_PATH("Icelands/Exterior.TGA"),
+	MESH_PATH("Icelands/Ground.3ds"),
+	MESH_PATH("Icelands/Ground.png"),
+	MESH_PATH("Icelands/Stories.3ds"),
+	MESH_PATH("Icelands/Stories.TGA"),
+	MESH_PATH("Icelands/Unbreakable.3ds"),
+	MESH_PATH("Icelands/Unbreakable.TGA"),
+	MESH_PATH("Magma/Breakable.3ds"),
+	MESH_PATH("Magma/Breakable.TGA"),
+	MESH_PATH("Magma/Exterior.TGA"),
+	MESH_PATH("Magma/Ground.3ds"),
+	MESH_PATH("Magma/Ground.TGA"),
+	MESH_PATH("Magma/Stories.3ds"),
+	MESH_PATH("Magma/Stories.TGA"),
+	MESH_PATH("Magma/Unbreakable.3ds"),
+	MESH_PATH("Magma/UnbreakableBorder.3ds"),
+	MESH_PATH("Magma/Unbreakable.TGA"),
+	MESH_PATH("Magnet.3ds"),
+	MESH_PATH("OilPoodle.3ds"),
+	MESH_PATH("PlayersTextures/PlayerBasic/PlayerColorSetOne.png"),
+	MESH_PATH("PlayersTextures/PlayerBasic/PlayerOne.b3d"),
+	MESH_PATH("PlayersTextures/PlayerDarker/PlayerColorSetTwo.png"),
+	MESH_PATH("PlayersTextures/PlayerDarker/PlayerTwo.b3d"),
+	MESH_PATH("PlayersTextures/PlayerGreen/PlayerColorSetThree.png"),
+	MESH_PATH("PlayersTextures/PlayerGreen/PlayerThree.b3d"),
+  MESH_PATH("PlayersTextures/PlayerYellow/PlayerColorSetYellow.png"),
+  MESH_PATH("PlayersTextures/PlayerYellow/PlayerFour.b3d"),
+	MESH_PATH("PowerUps.b3d"),
+	MESH_PATH("RoundedCornerTile.3ds"),
+	MESH_PATH("Rust.TGA"),
+	MESH_PATH("SplashScreen/AllBombermanColorPattern.png"),
+	MESH_PATH("SplashScreen/SplashScreen.3ds"),
+	MESH_PATH("TMPBlock2.3ds"),
+	MESH_PATH("TMPBlock.3ds"),
+	MESH_PATH("TMPMiniBlock.3ds"),
+	MESH_PATH("TMPPlayer.3ds")
+})
+{
+
+}
+
+FileChecker::~FileChecker()
+{
+
+}
+
+#ifdef _WIN32
+bool FileChecker::checkAllFiles() const
+{
+  for (size_t i = 0; i < Files.size(); i++)
+    if (_access(Files[i].c_str(), 4) == -1
+		|| _access(Files[i].c_str(), 6) == -1)
+      return false;
+  return true;
+}
+#endif
+#ifdef linux
+bool FileChecker::checkAllFiles() const
+{
+	for (size_t i = 0; i < Files.size(); i++)
+		if (access(Files[i].c_str(), F_OK | R_OK) == -1)
+		{
+			std::cout << " >>>> "  << Files[i] << std::endl;
+			return false;
+		}
+	return true;
+}
+#endif

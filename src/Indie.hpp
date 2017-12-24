@@ -1,0 +1,276 @@
+/**
+ * @Author: raph
+ * @Date:   2017-06-07T13:37:18+02:00
+ * @Last modified by:   raph
+ * @Last modified time: 2017-06-18T02:15:56+02:00
+ */
+
+
+
+//
+// Created by baptiste on 5/11/17.
+//
+
+#ifndef ENUM_HPP
+#define ENUM_HPP
+
+#include <irrlicht/irrlicht.h>
+
+using namespace irr;
+using namespace core;
+using namespace scene;
+using namespace video;
+using namespace io;
+using namespace gui;
+
+namespace Indie
+{
+  enum Biome
+  {
+    BIOME_VOID = -1,
+    NEUTRAL = 0,
+    COUNTRYSIDE = 1,
+    SNOWY,
+    VOLCANO,
+    DESERT,
+    BIOME_COUNT
+  };
+
+  enum Movement
+  {
+    STRAFE_RIGHT_MOV,
+    STRAFE_LEFT_MOV,
+    STRAFE_UP_MOV,
+    STRAFE_DOWN_MOV,
+    JUMP_UP_MOV,
+    JUMP_DOWN_MOV,
+    JUMP_RIGHT_MOV,
+    JUMP_LEFT_MOV
+  };
+
+  enum EffectType
+  {
+    OIL_EFFECT = 0,
+    ICE_EFFECT = 1,
+    FLAME_EFFECT,
+    SPEED_EFFECT,
+    INVINCIBLE_EFFECT,
+    KICK_EFFECT,
+    CLASSICSMOKE_EFFECT,
+    FROZENSMOKE_EFFECT,
+    WIN_EFFECT,
+    ROTATION_EFFECT,
+    FULLALPHA_EFFECT,
+    EFFECT_COUNT
+  };
+
+  /*enum TopEntityType
+  {
+    BLOCKFORCEEMPTY_TOP_ENTITY = -2,
+    EMPTY_TOP_ENTITY = -1,
+    BOMB_TOP_ENTITY,
+    FLAME_TOP_ENTITY,
+    BREAKABLE_TOP_ENTITY
+  };
+
+  enum MiddleEntityType
+  {
+    BLOCKFORCEEMPTY_MIDDLE_ENTITY = -2,
+    EMPTY_MIDDLE_ENTITY = -1,
+    OIL_MIDDLE_ENTITY,
+    ICE_MIDDLE_ENTITY,
+    UNBREAKABLE_MIDDLE_ENTITY,
+    POWER_MIDDLE_ENTITY
+  };
+
+  enum BottomEntityType
+  {
+    BLOCKFORCEEMPTY_BOTTOM_ENTITY = -2,
+    EMPTY_BOTTOM_ENTITY = -1,
+    STONE_BOTTOM_ENTITY,
+    SPIKE_BOTTOM_ENTITY,
+    GRASS_BOTTOM_ENTITY,
+    TRAMPOLINE_BOTTOM_ENTITY
+  };*/
+
+  enum BombType
+  {
+    CLASSIC_BOMB,
+    FROZEN_BOMB,
+    OIL_BOMB
+  };
+
+  enum Entity
+  {
+    FORCEEMPTY_ENTITY = -2,
+    EMPTY_ENTITY = -1,
+    BOMB_ENTITY,
+    FROZENBOMB_ENTITY,
+    OILBOMB_ENTITY,
+    FLAME_ENTITY,
+    OIL_ENTITY,
+    ICE_ENTITY,
+    SPIKE_ENTITY,
+    TRAMPOLINE_ENTITY,
+    UNBREAKABLE_ENTITY,
+    UNBREAKABLE_BORDER_ENTITY,
+    BREAKABLE_ENTITY,
+    STONE_ENTITY,
+    MAGNET_ENTITY,
+    GROUND_ENTITY,
+    GRASS_ENTITY,
+    VOID_ENTITY,
+    FALL_ENTITY,
+    BONUS_ENTITY,
+    POWERSPEED_ENTITY, //
+    POWERKICK_ENTITY,//
+    RANGEUP_ENTITY,//
+    RANGEDOWN_ENTITY,//
+    BOMBCUP_ENTITY,//
+    BOMBDOWN_ENTITY,//
+    INVINCIBLE_ENTITY,//
+    BOMBFREEZER_ENTITY,//
+    BOMBOILER_ENTITY,//
+    ENTITY_COUNT
+  };
+
+  enum PlayerType
+  {
+    UNUSED_PLAYER = -1,
+    IA_PLAYER_EZ,
+    IA_PLAYER_MED,
+    IA_PLAYER_HARD,
+    HUMAN_PLAYER,
+  };
+
+  enum ActionPlayer
+  {
+    UP_ACTION_PLAYER,
+    DOWN_ACTION_PLAYER,
+    LEFT_ACTION_PLAYER,
+    RIGHT_ACTION_PLAYER,
+    BOMB_ACTION_PLAYER
+  };
+
+  enum Direction
+  {
+    UP_DIRECTION,
+    DOWN_DIRECTION,
+    RIGHT_DIRECTION,
+    LEFT_DIRECTION,
+    UNDEFINED_DIRECTION
+  };
+
+  enum DisplayInstance
+  {
+    MENU,
+    START_GAME,
+    GAME,
+    IG_SETS,
+    GAME_PAUSED,
+    END_GAME,
+  };
+
+  enum SwitchDisplay
+  {
+    NOOP,
+    TO_MENU,
+    TO_START_GAME,
+    TO_GAME,
+    TO_IG_SETS,
+    TO_GAME_PAUSED,
+    TO_END
+  };
+
+  enum CurrentScreen
+  {
+    SPLASH = 0,
+    MAINPAGE = 1,
+    OPTIONS = 2,
+    SCOREBOARD,
+    NEWORLOAD,
+    LOAD,
+    SETGAME,
+    OUTOFMENU
+  };
+
+  enum MenuButtons
+  {
+/* General Menu */
+    QUIT_BUTTON = 101,
+    MAINPAGE_BUTTON,
+    SCOREBOARD_BUTTON,
+    NEWORLOAD_BUTTON,
+    OPTIONS_BUTTON,
+    APPLY_BUTTON,
+    DEFAULT_BUTTON,
+    LOAD_BUTTON,
+    SETGAME_BUTTON,
+    OUTOFMENU_BUTTON,
+
+/* SetGame Buttons */
+    MHEIGHT_BUTTON,
+    PHEIGHT_BUTTON,
+    MWIDTH_BUTTON,
+    PWIDTH_BUTTON,
+    MITEMDENSITY_BUTTON,
+    PITEMDENSITY_BUTTON,
+    MFLOORDENSITY_BUTTON,
+    PFLOORDENSITY_BUTTON,
+    PLATFORM_BUTTON,
+    REROLL_BUTTON,
+    CHANGEIMAGE1_BUTTON,
+    CHANGENAME1_BUTTON,
+    CHANGENAME2_BUTTON,
+    CHANGENAME3_BUTTON,
+    CHANGENAME4_BUTTON,
+    TYPE1_BUTTON,
+    TYPE2_BUTTON,
+    TYPE3_BUTTON,
+    TYPE4_BUTTON,
+    NEXTMAP_BUTTON,
+    PREVMAP_BUTTON,
+    NEXTBIOME_BUTTON,
+    PREVBIOME_BUTTON,
+    PREMADE_BUTTON,
+    CUSTOM_BUTTON,
+
+/* General Settings */
+    MASTERUP,
+    MASTERDOWN,
+    MUSICUP,
+    MUSICDOWN,
+    FXUP,
+    FXDOWN,
+    SWAPLEFT,
+    SWAPRIGHT,
+    UPMOD,
+    DOMOD,
+    LEMOD,
+    RIMOD,
+    ACMOD,
+    MUTE,
+
+/* Misc Buttons */
+    OK_BUTTON,
+    DISMISS_BUTTON
+  };
+
+  enum LoaderChoices
+  {
+    LOAD0 = 300,
+    LOAD1 = 301,
+    LOAD2 = 302,
+    LOAD3 = 303,
+    LOAD4 = 304,
+    LOAD5 = 305,
+    LOAD6 = 306
+  };
+
+  enum ScoreType {
+    CLASSIC,
+    DEATHMATCH
+  };
+}
+
+#endif /* !ENUM_HPP */

@@ -1,0 +1,5 @@
+CD "%~dp0"
+RD /s /q ".\Release\"
+RD /s /q ".\build\"
+RD /s /q "%homepath%\Indie"
+RD /s /q "%homepath%\Desktop\Indie.exe"

@@ -16,7 +16,7 @@ make -j8
 cd ..
 if [ $zsh -eq 1 ]
 then
-    echo "export LD_PRELOAD=\"`pwd`/winInc/libboost_serialization.so `pwd`/winInc/libfreetype.so `pwd`/winInc/libIrrlicht.so `pwd`/winInc/libopenal.so `pwd`/winInc/libsfml-audio.so `pwd`/winInc/libsfml-system.so `pwd`/winInc/libpng.so `pwd`/winInc/libz.so\" ### INDIE" >> $HOME/.zshrc
+    echo "export LD_PRELOAD=\"`pwd`/winInc/libboost_serialization.so  `pwd`/winInc/libIrrlicht.so `pwd`/winInc/libopenal.so `pwd`/winInc/libsfml-audio.so `pwd`/winInc/libsfml-system.so `pwd`/winInc/libpng.so `pwd`/winInc/libz.so\" ### INDIE" >> $HOME/.zshrc
     echo "export PATH=$HOME/bin:/usr/local/bin:$PATH ### INDIE" >> $HOME/.zshrc
 
     fi
